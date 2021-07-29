@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'Style/notesOnly.css' %}">
+{% endblock link %}
+
+
+{% block body %}
+    {% comment %} Rendering all notes {% endcomment %}
+
+    <section class="allNote">
+
+        <h1 class='allNote_message'>All notes that you have created shown here</h1>
+       
+        {% for group in allGroup %}
+            {% for i in group.note_set.all %}
+                
+                <div class='notes'>
+                    <h3 class='title'>{{ forloop.counter }}. {{i.title}}</h3>
+                    <div class="description">
+                        <p>{{i.desc|truncatechars:500}}</p>
+                    </div>
+                    <div class="others">
+                        <p class='time'>Created <span>{{i.time}}</span></   p>                     
+                        <div class="links">
+                            <a href="{% url 'note' group.id i.id %}" class='view_note'>Viewe Note</a>
+                            {% comment %} <a href="" class='delete'>Delete Note</a> {% endcomment %}
+                            {% comment %} <a href="" class='edit'>Edit Note</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% endfor %}
+    </section>
+
+
+{% endblock body %}

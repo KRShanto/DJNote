@@ -1,0 +1,80 @@
+:root{
+    --root-color:rgb(224, 16, 9);
+}
+
+
+
+.allGroup{
+    position: relative;
+    margin: 4rem 0;
+    /* transform: translateX(-50%);
+    left: 50%; */
+    /* border: 0.2rem solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.allGroup .allGroup_message{
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    /* color: rgb(223, 113, 11); */
+    color: black;
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+}
+
+.allGroup .group{
+    margin: 2rem 0;
+    border: 0.2rem solid black;
+    font-size: 1.5rem;
+    width: 70%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #dfdbdb;
+    box-shadow: 0.2rem 0 0.6rem black;
+
+}
+.allGroup .group  .title{
+    font-size: 3rem;
+    font-family: sans-serif;
+}
+.allGroup .group .other{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 0.3rem solid  black; */
+}
+
+
+.allGroup .group .other .time{
+    display: inline-block;
+}
+.allGroup .group .other .info span{
+    color: blue;
+}
+
+.allGroup .group .other a{
+    padding: 1rem;
+    /* background-color: var(--root-color); */
+    color: white;
+    border-radius: 1rem;
+    border: 0.1rem solid black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 0.1rem 0.05rem 0.1rem black;
+    margin: 0 1rem;
+    box-shadow:  0.1rem 0 0.6rem black;
+
+}
+.allGroup .group .other .links a.view_note{
+    background-color: rgb(23, 23, 195);
+}
+.allGroup .group .other .links a.delete{
+    background-color: rgb(194, 26, 26);
+}
+.allGroup .group .other .links a.edit{
+    background-color: rgb(8, 105, 8);
+}

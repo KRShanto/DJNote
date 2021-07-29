@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block link %}
+    {% comment %} CSS Link {% endcomment %}
+    {% comment %} This is for edit the groups {% endcomment %}
+    <link rel="stylesheet" href="{% static 'Style/home.css' %}">
+    <link rel="stylesheet" href="{% static 'Style/homeGroup.css' %}">
+
+    {% comment %} JS link {% endcomment %}
+    <script src="{% static 'JS/home.js' %}"></script>
+
+{% endblock link %}
+
+{% block body %}
+
+    <div class="createGroup">
+        <div class='formWraper'>
+            <h2><span></span> Create Your New Group</h2>
+            <form action="/" method='post'>
+                {% csrf_token %}
+                <label for="name">Group Name:</label>
+
+                <input type="text" name="name" id="name">
+                
+                <button type="submit">Create</button>
+
+                <button type="button" class='cancelBtn'>Cancel</button>
+            </form> 
+        </div> 
+        
+        <div class="createGroupIcon">
+            <h2>Create Your Group For notes</h2>
+            <div class="round"></div>
+        </div>
+    </div>
+
+
+    <section class="allGroup">
+        <h1 class='allGroup_message'>Your all Groups are shown here</h1>
+        {% for i in groups %}
+
+            <div class='group'> 
+
+                <h3 class='title'>{{ forloop.counter }}. {{i.name}}</h3>
+
+                <div class="other">
+
+                    <div class='info'>
+
+                        <p class='time'>Created <span>{{i.time}}</span></p>
+
+                        <p class='noteLenght'>The group has <span>{{i.note_set.all|length}}</span> Notes</p>
+
+                    </div>
+
+                    <div class="links">
+
+                        <a href="{% url 'group' i.id %}"            class='view_note'>Viewe Group</a>
+
+                        <a href="{% url 'deleteGroup' i.id %}" class='delete'>Delete Group</a>
+
+                        <a href="{% url 'group' i.id %}" class='edit'>Edit Group</a>
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+        {% endfor %}
+    </section>
+
+{% endblock body %}

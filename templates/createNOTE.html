@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Create Note  {% endblock title %}
+
+{% block link %}
+
+    {% comment %} CSS link {% endcomment %}
+    <link rel="stylesheet" href="{% static 'Style/createNOTE.css' %}">
+
+    {% comment %} JS link {% endcomment %}
+    <script src="{% static 'JS/createNOTE.js' %}"></script>
+
+{% endblock link %} 
+
+
+{% block body %}
+
+<h1 class='groupInfo'>Note Group: <span>{{group.name}}</span></h1>
+
+<div class='createNewNote'>
+
+    <form action="{% url 'createNOTE' group.id %}" method="post" id='createNoteForm'>
+        {% csrf_token %}
+    {% comment %} This form will submitted by javascript {% endcomment %}
+        <label for="title">Note Title</label>
+        <input type="text" name="title" id="title" required>
+
+        <!--This will be hidden by javascript-->
+        <input class='hidden' type="text" name="desc"  id="desc">
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+    <label>Note Body</label>
+    <div class="noteDesc" contenteditable="true"></div>
+
+    <!-- When this button will be clicked, javascript will take the innerHTML of '.noteDesc' and put them into the hidden input tag '.hidden'. And after that javascript will make the submitted.-->
+    <br><br>
+    <button class="createNoteBtn">Create</button>
+    <br><br>
+
+</div>
+
+
+
+
+{% endblock body %}

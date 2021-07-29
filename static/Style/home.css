@@ -1,0 +1,154 @@
+.createGroup{
+    position: relative;
+    /* display: inline-block; */
+    margin: 2rem 0;
+    margin-left: auto;
+    width: auto;
+    /* border: 0.2rem solid tomato; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 4rem;
+}
+.createGroup .formWraper{
+    transition: all 0.5s;
+    /* display: none; */
+    transform: scale(0);
+    /* animation: displayAnime 4s linear forwards; */
+}
+@keyframes displayAnime{
+    0%{
+        display: none;
+    }
+    100%{
+        display: inline;
+    }
+}
+.createGroup .formWraper h2{
+    position: relative;
+    font-size: 4rem;
+    /* text-align: center; */
+    font-family: sans-serif;
+    margin-bottom: 1rem;
+    /* border: 0.5rem solid red; */
+    /* width: auto; */
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.createGroup .formWraper h2 span{
+    position: absolute;
+    /* border: 0.3rem solid black; */
+    transition: right 1.5s;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+}
+
+.createGroup form *{
+    /* position: relative; */
+    font-size: 2rem;
+    /* margin: 0 1rem; */
+}
+.createGroup form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* width: 80%; */
+    --root-form-color:rgb(8, 8, 155);
+}
+
+.createGroup form label{
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: var(--root-form-color);
+}
+.createGroup form input{
+    width: 40rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    
+    
+}
+.createGroup form input:focus{
+    border: 0.2rem solid var(--root-form-color);
+    box-shadow: 0.1rem 0 0.5rem var(--root-form-color);
+    
+}
+
+.createGroup form button{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--root-form-color);
+    color: var(--root-form-color);
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.createGroup form button:hover{
+    background-color: var(--root-form-color);
+    color: white;
+}
+
+
+
+.createGroup .createGroupIcon{
+    margin-left: auto;
+    position: relative;
+    /* border: 0.3rem solid black; */
+    transition: transform 0.3s;
+}
+.createGroup .createGroupIcon:hover h2{
+    transform: scale(1);
+
+}
+.createGroup .createGroupIcon h2{
+    font-size: 2.5rem;
+    position: absolute;
+    font-family: monospace;
+    width: 40rem;
+    left: -40rem;
+    border-radius: 1rem;
+    padding: 0 0.5rem;
+    background-color: rgb(28, 164, 218);
+    color: rgb(238, 255, 0);
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    transform-origin: right;
+    transition: transform 0.4s;
+    transform: scale(0);
+}
+.createGroup .createGroupIcon .round{
+    --round-icon-color:rgb(68, 0, 255);
+    --round-widht-height:7rem;
+    position: relative;
+    width: var(--round-widht-height);
+    height: var(--round-widht-height);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.4rem solid var(--round-icon-color);
+    margin-left: auto;
+}
+.createGroup .createGroupIcon .round::before, .round::after{
+    position: absolute;
+    content: '';
+    
+    background-color: var(--round-icon-color);
+    border-radius: 1rem;
+}
+.createGroup .createGroupIcon .round::before{
+    width: 80%;
+    height: 0.5rem;
+}
+.createGroup .createGroupIcon .round::after{
+    width: 0.5rem;
+    height: 80%;
+
+}

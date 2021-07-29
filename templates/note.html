@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block title %}
+    {% for i in note %}
+        {{i.title}}
+    {% endfor %}
+{% endblock title %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'Style/notePage.css' %}">
+{% endblock link %}
+
+
+{% block body %}
+
+    {% for i in note %}
+
+    <div class="mainDiv">
+
+
+        <div class="info">
+
+            <h1 class='noteHead'>Group Name: <span>{{group.name}}</span></h1>
+
+            <h1 class='noteHead'>Note Title: <span>{{i.title}}</span></h1>
+
+            <h1 class='noteHead'>Created: <span>{{i.time}}</span></h1>
+
+        </div>
+        
+
+        <div class="options">
+            <a href="{% url 'updateNOTE' i.group.id i.id %}" class='edit_note'>Edit Note</a>
+            <a href="{% url 'deleteNote' i.group.id i.id %}" class='delete_note'>Delete Note</a>
+        </div>
+
+
+
+    </div>
+        
+        <div class='desc'>
+            <p>{{i.desc|safe}}</p>
+        </div>
+
+    {% endfor %}
+
+{% endblock body %} 

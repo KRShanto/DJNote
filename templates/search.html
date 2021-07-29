@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load customTemp %}
+
+{% block title %}Search{% endblock title %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'Style/notesOnly.css' %}">
+
+
+    {% comment %} Using inline style for .notHead {% endcomment %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,700&display=swap');
+        .allNote .notes .noteHead{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .allNote .notes .noteHead .groupName{
+            font-size: 4.5rem;
+            color: rgb(255, 0, 179);
+            font-family: 'Andada Pro', serif;
+            text-shadow: 0.05rem 0.05rem 0.1rem black;
+        }
+        .allNote .allNote_message span{
+            font-style:italic;
+            color: rgb(211, 19, 51);
+        }
+    </style>
+
+{% endblock link %}
+
+
+{% block body %}
+    {% comment %} Rendering all notes {% endcomment %}
+
+    <section class="allNote">
+
+        <h1 class='allNote_message'>All Notes that are matching with your search: <span>{{query}}</span></h1>
+       
+        {% comment %} {% for group in allGroup %} {% endcomment %}
+            {% for i in notes %}
+                
+                <div class='notes'>
+
+                    {% comment %} Group:{{i.group.name}}<br>
+                    Custom Tag:{% test %} {% endcomment %}
+
+                    <div class="noteHead">
+                        <h3 class='title'>{{ forloop.counter }}. {{i.title}}</h3>
+                        <h1 class="groupName">{{i.group.name}}</h1>
+                    </div>
+                    <div class="description">
+                        <p>{{i.desc|truncatechars:500}}</p>
+                    </div>
+                    <div class="others">
+                        <p class='time'>Created <span>{{i.time}}</span></p>                     
+                        <div class="links">
+                            <a href="{% url 'note' i.group.id i.id %}" class='view_note'>Viewe Note</a>
+                            {% comment %} <a href="" class='delete'>Delete Note</a> {% endcomment %}
+                            {% comment %} <a href="" class='edit'>Edit Note</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div> 
+
+            {% endfor %}
+        {% comment %} {% endfor %} {% endcomment %}
+    </section>
+
+
+{% endblock body %}

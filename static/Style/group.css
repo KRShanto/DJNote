@@ -1,0 +1,152 @@
+/* font-family: 'Tinos', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital@1&display=swap');
+
+
+/* Styling for group.html */
+
+.container-info-update{
+    display: flex;
+    flex-direction: row;
+    /* border: 0.3em solid red; */
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+.group_name {
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-family: 'Tinos', serif;
+}
+.group_name span{
+    text-shadow: 0.1rem 0rem 0.1rem black;
+    color: rgb(255, 53, 2);
+}
+.group_creationTime{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: sans-serif;
+    font-family: 'Tinos', serif; 
+
+}
+.group_creationTime span{
+    color: rgb(182, 63, 34);
+    text-shadow: 0.1rem 0rem 0.1rem black;
+    font-size: 2.5rem;
+} 
+
+
+/******* This is for note creation icon ***********/
+
+.createNoteIcon{
+    /* --w-h:10rem; */
+    --main-color:rgb(110, 2, 153);
+    /* position: relative; */
+    margin-left: auto;
+    position: relative;
+    /* border: 0.2rem solid black; */
+    /* width: var(--w-h);
+    height: var(--w-h); */
+    /* giving the height and width with javascript. :JS/group.js */
+    right: 2rem;
+    top: -8rem;
+    transform-origin: center;
+    transition: transform 0.3s;
+    /* padding: 0; */
+}
+.createNoteIcon .round{
+
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 0.6rem solid var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createNoteIcon .round::after, .round::before{
+    position: absolute;
+    content: '';
+    background-color: var(--main-color);
+    border-radius: 2rem;
+
+}
+.createNoteIcon .round::after{
+    width: 95%;
+    height: 0.5rem;
+}
+.createNoteIcon .round::before{
+    height: 95%;
+    width: 0.5rem;
+}
+.createNoteIcon .message{
+    position: absolute;
+    border: 0.1rem solid black;
+    width: 20rem;
+    left: -20rem;
+    font-family: sans-serif;
+    font-style: italic;
+    padding: 0.5rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background-color: rgb(9, 160, 219);
+    color: rgb(251, 255, 0);
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    text-align: center;
+    transition: 0.3s;
+    transform-origin: right;
+    transform: scale(0);
+}
+.createNoteIcon:hover .message{
+    transform: scale(1);
+}
+
+
+
+
+
+/* *********** This is for updateGroup form ********** */
+.updateGroup{
+    font-size: 3rem;
+    /* margin: ;    */
+    font-family: sans-serif;
+}
+.updateGroup form{
+    --root-form-color:purple;
+    margin-top: 2rem;
+}
+.updateGroup form label{
+    color: var(--root-form-color);
+    font-weight: bold;
+    font-style: oblique;
+
+}
+.updateGroup form input{
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid black;
+    outline: none;
+
+}
+.updateGroup form input:focus{
+    border: 0.2rem solid var(--root-form-color);
+    box-shadow: 0 0 0.8rem var(--root-form-color);
+
+}
+.updateGroup form button[type='submit']{
+    color: var(--root-form-color);
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--root-form-color);
+    font-weight: bold;
+    transition: 0.5s;
+}
+.updateGroup form button[type='submit']:hover{
+    color: white;
+    background-color: var(--root-form-color);
+
+}

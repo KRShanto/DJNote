@@ -1,0 +1,100 @@
+/* THis is for createNOTE.html page */
+
+/*  font-family: 'Merriweather', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
+/* font-family: 'Andada Pro', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,700&display=swap');
+
+.groupInfo{
+    font-size: 3rem;
+    font-family: sans-serif;
+    margin-top: 2rem;
+
+}
+.groupInfo span{
+    font-family: 'Andada Pro', serif;
+    font-style: oblique;
+    font-size: 4rem;
+    color: rgb(255, 0, 242);
+    /* color: red; */
+    text-shadow: 0.1rem 0 0.1rem rgb(15, 7, 7);
+}
+
+
+.createNewNote{
+    --root-border-color:rgba(11, 8, 167, 0.897);
+    --root-text-color:rgb(212, 14, 120);
+
+    /* font-size: 3rem; */
+    /* border: 0.2rem solid yellowgreen; */
+    width: 70%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.createNewNote form{
+    /* border: 0.2rem  solid black; */
+    /* display: inline-block; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.createNewNote  label{
+    font-weight: bold;
+    font-size: 4rem;
+    font-style: oblique;
+    font-family: 'Merriweather', serif;
+    color: var(--root-text-color);
+    text-shadow: 0.1rem 0 0.1rem black;
+
+}
+.createNewNote   input[type='text']{
+    font-size: 3rem;
+    width: 60%;
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: 0.2rem solid black;
+}
+.createNewNote   input[type='text']:focus{
+    border: 0.2rem solid var(--root-border-color);
+    box-shadow: 0.1rem 0 0.5rem var(--root-border-color);
+
+}
+.createNewNote .noteDesc{
+    border: 0.3rem solid #000;
+    width: 100%;
+    height: 60rem;
+    font-size: 2.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow: scroll;
+    outline: none;
+}
+.createNewNote .noteDesc:focus{
+    border: 0.2rem solid var(--root-border-color);
+    box-shadow: 0.1rem 0 0.5rem var(--root-border-color);
+
+}
+.createNewNote .createNoteBtn{
+    font-size: 2.6rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: var(--root-text-color);
+    border: 0.2rem solid var(--root-text-color);
+    box-shadow: 0 0 0.5rem var(--root-text-color);
+    text-shadow: 0.1rem 0rem 0.1rem black;
+    transition: 0.5s;
+}
+.createNewNote .createNoteBtn:hover{
+    background-color: var(--root-text-color);
+    color: white;
+}
