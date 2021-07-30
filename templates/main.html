@@ -20,17 +20,29 @@
     {% endblock link %}
 </head>
 <body>
-    <nav>
+    <nav class=''>
+
         <h1><a href="/">DJ NoTe</a> </h1>
+
         <form action='{% url 'search' %}' method="get" class="search">
             <button type="submit" class='searchBtn'>Search</button>
             <input type="search" name="searchNote" id="searchNote" placeholder='Search here'>
         </form>
+
         <ul> 
             <li><a href="/">Home</a></li>
             <li><a href="{% url 'allnotes' %}">All Notes</a></li>
             <li><a href="/admin">Admin Page</a></li>
         </ul>
+
+    <!-- This is for Responsive menu-->
+        <div class="hamburgerMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
     </nav>
 
     <div class='extra_space' style='height:8rem'></div>

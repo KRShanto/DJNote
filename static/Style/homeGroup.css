@@ -5,6 +5,7 @@
 
 .allGroup{
     position: relative;
+    width: 100vw;
     margin: 4rem 0;
     display: flex;
     flex-direction: column;
@@ -19,9 +20,9 @@
 }
 
 .allGroup .group{
+    position: relative;
     margin: 2rem 0;
     border: 0.2rem solid black;
-    font-size: 1.5rem;
     width: 70%;
     padding: 1rem;
     border-radius: 1rem;
@@ -30,7 +31,7 @@
 
 }
 .allGroup .group  .title{
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: sans-serif;
 }
 .allGroup .group .other{
@@ -39,9 +40,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 2rem;
 }
-
-
 .allGroup .group .other .time{
     display: inline-block;
 }
@@ -70,4 +70,27 @@
 }
 .allGroup .group .other .links a.edit{
     background-color: rgb(8, 105, 8);
+}
+
+
+
+
+
+
+/* Lets make it responsive */
+@media only screen and (max-width: 1000px) {
+    .allGroup .group .other .links{
+        display: flex;
+        flex-direction: column;
+        margin-top: -5rem;
+    }
+    .allGroup .group .other .links a{
+        margin: 2rem 0;
+        padding: 1.5rem;
+    }
+
+    .allGroup .group .other .info{
+        margin-top: auto;
+    }
+    
 }

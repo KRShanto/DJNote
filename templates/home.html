@@ -13,7 +13,7 @@
 
 {% endblock link %}
 
-
+  
 {% block body %}
 
     <div class="createGroup">
@@ -41,10 +41,11 @@
 
         <h1 class='allGroup_message'>Your all Groups are shown here</h1>
         {% for i in groups %}
-
+ 
             <div class='group'> 
 
                 <h3 class='title'>{{ forloop.counter }}. {{i.name}}</h3>
+                
                 <div class="other">
 
                     <div class='info'>

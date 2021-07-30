@@ -72,6 +72,7 @@ def createNOTE(req, group):
         newNote = Note(group = group, title = noteTitle, desc = noteDesc)
         newNote.save()
         messages.success(req, "IT is a post request")
+        return redirect(f'/group-{group.id}')
 
     return render(req, 'createNOTE.html', {"group":group})
 
