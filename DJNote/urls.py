@@ -18,32 +18,32 @@ from django.urls import path
 from home import views
 
 urlpatterns = [
-    # GET request**********
+    # GET request
     path('admin/', admin.site.urls, name='admin'),
 
-    # GET + POST request. Post request for creating note's group (complete)*****************
+    # GET + POST request. Post request for creating note's group 
     path('', views.home, name='home'),
  
-    # GET request only*************
+    # GET request only
     path('search/', views.searchFunction, name='search'),
 
-    # GET request only**************
+    # GET request only
     path('allnotes/', views.allNotes , name='allnotes'),
 
-    # GET + POST request. post request for updating the group info. (complete)*************
+    # GET + POST request. post request for updating the group info. 
     path('group-<int:group>/', views.group, name='group'),
  
-    # GET request only. GET request for deleting 'group' which id will be <int:group>(completed)***********
+    # GET request only. GET request for deleting 'group' which id will be <int:group>
     path('group-<int:group>-delete', views.deleteGroup, name='deleteGroup'),
 
-    # GET + POST request. Post request for creating a new note which group's id will be <int:group>(complete)**********
+    # GET + POST request. Post request for creating a new note which group's id will be <int:group>
     path('group-<int:group>-createNOTE', views.createNOTE ,name='createNOTE') ,
 
-    # GET request only**************
+    # GET request only
     path('group-<int:group>/note-<int:note>/', views.note,
     name='note'),
 
-    # GET + POST request. Post request for update the note which id will be <int:note>, group's id will be <int:group>.(complete)*************
+    # GET + POST request. Post request for update the note which id will be <int:note>, group's id will be <int:group>.
     path('group-<int:group>/note-<int:note>-update', views.updateNOTE, name='updateNOTE'),
 
     # POST request for deleting the note which id will be <int:note> and group will be <int:group>

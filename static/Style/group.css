@@ -7,7 +7,6 @@
 .container-info-update{
     display: flex;
     flex-direction: row;
-    /* border: 0.3em solid red; */
     width: 70%;
     justify-content: space-between;
     align-items: center;
@@ -38,23 +37,16 @@
 /******* This is for note creation icon ***********/
 
 .createNoteIcon{
-    /* --w-h:10rem; */
     --main-color:rgb(110, 2, 153);
-    /* position: relative; */
     margin-left: auto;
     position: relative;
-    /* border: 0.2rem solid black; */
-    /* width: var(--w-h);
-    height: var(--w-h); */
     /* giving the height and width with javascript. :JS/group.js */
     right: 2rem;
     top: -8rem;
     transform-origin: center;
     transition: transform 0.3s;
-    /* padding: 0; */
 }
 .createNoteIcon .round{
-
     width: 90%;
     height: 90%;
     position: absolute;
@@ -104,13 +96,9 @@
 }
 
 
-
-
-
 /* *********** This is for updateGroup form ********** */
 .updateGroup{
     font-size: 3rem;
-    /* margin: ;    */
     font-family: sans-serif;
 }
 .updateGroup form{

@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 
-{% comment %} This page is full copied from createNOTE.html {% endcomment %}
+{% comment %} This page is 90% copied from createNOTE.html {% endcomment %}
 
 {% block title %}Create Note  {% endblock title %}
 
@@ -23,27 +23,24 @@
 <div class='createNewNote'>
 
     {% for i in note %}
-    <form action="{% url 'updateNOTE' group.id i.id %}" method="post" id='createNoteForm'>
-        {% csrf_token %}
-    {% comment %} This form will submitted by javascript {% endcomment %}
-        <label for="title">Note Title</label>
-        
-        <input type="text" name="title" id="title" required value="{{i.title}}">
-        {% endfor %}
+
+        <form action="{% url 'updateNOTE' group.id i.id %}"     method="post" id='createNoteForm'>
+            {% csrf_token %}
+        <!-- This form will submitted by javascript -->
+            <label for="title">Note Title</label>
+            <input type="text" name="title" id="title" required value="{{i.title}}">
+
+    {% endfor %}
 
         <!--This will be hidden by javascript-->
         <input class='hidden' type="text" name="desc"  id="desc">
     </form>
 
-    <br>
-    <br>
-    <br>
-    <br>
-
+    <br><br><br><br>
     
     <label>Note Body</label>
     {% for i in note %}
-    <div class="noteDesc" contenteditable="true" >{{i.desc|safe}}</div>
+        <div class="noteDesc" contenteditable="true" >{{i.desc|safe}}</div>
     {% endfor %}
 
     <!-- When this button will be clicked, javascript will take the innerHTML of '.noteDesc' and put them into the hidden input tag '.hidden'. And after that javascript will make the submitted.-->

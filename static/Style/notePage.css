@@ -1,12 +1,10 @@
 .mainDiv{
-    /* border: 0.3rem solid black; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .mainDiv .options{
     position: relative;
-    /* border: 0.3rem solid pink; */
     margin-right: 4rem;
     display: flex;
     flex-direction: row;
@@ -22,8 +20,6 @@
     text-decoration: none ;
     font-weight: bold;
     font-family: sans-serif;
-    /* top: 50%;
-    transform: translateY(-50%); */
     color: white;
     text-shadow: 0.1rem 0.1rem 0.05rem black;
     box-shadow: 0.1rem 0 0.5rem black;
@@ -51,7 +47,6 @@
 }
 .desc{
     position: relative;
-    /* border: 0.2rem solid rebeccapurple; */
     wiDTH: 70%;
     font-size:2rem;
     left: 50%;

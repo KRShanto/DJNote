@@ -1,15 +1,11 @@
 :root{
     --root-color:rgb(224, 16, 9);
 }
-
-
+/* This is for home.html */
 
 .allGroup{
     position: relative;
     margin: 4rem 0;
-    /* transform: translateX(-50%);
-    left: 50%; */
-    /* border: 0.2rem solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +14,6 @@
     font-size: 4rem;
     font-weight: bold;
     font-family: sans-serif;
-    /* color: rgb(223, 113, 11); */
     color: black;
     text-shadow: 0.1rem 0.1rem 0.1rem black;
 }
@@ -44,7 +39,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* border: 0.3rem solid  black; */
 }
 
 
@@ -57,7 +51,6 @@
 
 .allGroup .group .other a{
     padding: 1rem;
-    /* background-color: var(--root-color); */
     color: white;
     border-radius: 1rem;
     border: 0.1rem solid black;

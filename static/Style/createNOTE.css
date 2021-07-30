@@ -17,7 +17,6 @@
     font-style: oblique;
     font-size: 4rem;
     color: rgb(255, 0, 242);
-    /* color: red; */
     text-shadow: 0.1rem 0 0.1rem rgb(15, 7, 7);
 }
 
@@ -25,9 +24,6 @@
 .createNewNote{
     --root-border-color:rgba(11, 8, 167, 0.897);
     --root-text-color:rgb(212, 14, 120);
-
-    /* font-size: 3rem; */
-    /* border: 0.2rem solid yellowgreen; */
     width: 70%;
     position: relative;
     left: 50%;
@@ -38,8 +34,6 @@
 
 }
 .createNewNote form{
-    /* border: 0.2rem  solid black; */
-    /* display: inline-block; */
     width: 100%;
     display: flex;
     flex-direction: column;

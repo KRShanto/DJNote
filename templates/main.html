@@ -9,8 +9,6 @@
 
     <!-- CSS link -->
     <link rel="stylesheet" href="{% static 'Style/main.css' %}">
-
-    
     
     <!-- Jquery Link-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,7 +16,6 @@
     <!-- JavaScript -->
         <script  src="{% static 'JS/main.js' %}"></script>
 
-    
     {% block link %}
     {% endblock link %}
 </head>
@@ -41,7 +38,6 @@
     {% comment %} Django Message Section {% endcomment %}
     {% for m in messages %}
         <section class="messageSection {{m.tags}}" >
-        {% comment %} <section class="messageSection warning" > {% endcomment %}
             <h1 class='message'>{{m}}</h1>
             <button class="messageBtn">OK</button>
         </section>

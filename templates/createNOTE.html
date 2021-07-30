@@ -16,25 +16,21 @@
 
 {% block body %}
 
-<h1 class='groupInfo'>Note Group: <span>{{group.name}}</span></h1>
+    <h1 class='groupInfo'>Note Group: <span>{{group.name}}</span></h1>
 
-<div class='createNewNote'>
+    <div class='createNewNote'>
 
-    <form action="{% url 'createNOTE' group.id %}" method="post" id='createNoteForm'>
+        <form action="{% url 'createNOTE' group.id %}" method="post" id='createNoteForm'>
         {% csrf_token %}
-    {% comment %} This form will submitted by javascript {% endcomment %}
-        <label for="title">Note Title</label>
-        <input type="text" name="title" id="title" required>
+        {% comment %} This form will submitted by javascript {% endcomment %}
+            <label for="title">Note Title</label>
+            <input type="text" name="title" id="title" required>
 
-        <!--This will be hidden by javascript-->
-        <input class='hidden' type="text" name="desc"  id="desc">
-    </form>
+            <!--This will be hidden by javascript-->
+            <input class='hidden' type="text" name="desc"  id="desc">
+        </form>
 
-    <br>
-    <br>
-    <br>
-    <br>
-
+    <br><br><br><br>
     
     <label>Note Body</label>
     <div class="noteDesc" contenteditable="true"></div>

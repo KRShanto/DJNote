@@ -11,8 +11,7 @@ from .models import Group, Note
 # Create your views here.
 def home(req):
     groups = Group.objects.all()
-    # notes = Note.objects.all()
-    # POST req for creating a new group.
+    # Post request for Creating Group
     if req.method == 'POST':
         name = req.POST['name']
         newGroup = Group(name = name)
@@ -36,7 +35,6 @@ def group(req, group):
         groupOFnote.name = name
         groupOFnote.save()
         messages.success(req, 'Your group has been updated')
-    # messages.success(req, "Welcome Boi")
 
     return render(req, 'group.html', {'group':groupOFnote, 'notes':notesOFgroup,})
 
@@ -44,7 +42,6 @@ def group(req, group):
 
 def note(req, group, note):
     groupOFnote = Group.objects.get(pk = group)
-    # noteOFgroup = Note.objects.filter(pk = note)
     noteOFgroup = Note.objects.filter(group__id = group, pk = note)
 
     return render(req, 'note.html', {'group':groupOFnote, 'note':noteOFgroup})
@@ -63,11 +60,9 @@ def searchFunction(req):
     notes = Note.objects.filter(title__icontains = query)
     
     
-    return render(req, 'search.html' , {'notes':notes, 'query':query })  
-    # return render(req, 'search.html')
+    return render(req, 'search.html' , {'notes':notes, 'query':query })
 
 def createNOTE(req, group):
-    # return HttpResponse("<h2> Welcome to note creation page </h2>")
     group = Group.objects.get(pk= group)
 
     if req.method == 'POST':
@@ -77,11 +72,6 @@ def createNOTE(req, group):
         newNote = Note(group = group, title = noteTitle, desc = noteDesc)
         newNote.save()
         messages.success(req, "IT is a post request")
-        # print(noteTitle)
-        # print(noteDesc)
-
-
-
 
     return render(req, 'createNOTE.html', {"group":group})
 
@@ -90,11 +80,6 @@ def createNOTE(req, group):
 def updateNOTE(req, group, note):
     groupOFnote = Group.objects.get(pk = group)
     noteOFgroup = Note.objects.filter(group__id = group, pk = note)
-
-    print(groupOFnote)
-    print(len(noteOFgroup))
-    print(noteOFgroup[0].title)
-
 
     if req.method == "POST":
         newTitle = req.POST['title']
@@ -106,10 +91,6 @@ def updateNOTE(req, group, note):
         noteOFgroup[0].desc = newDesc
 
         noteOFgroup[0].save()
-        # print(noteOFgroup.id)
-        # print(noteOFgroup.title)
-        
-
 
     return render(req, 'updateNOTE.html', {'group':groupOFnote, 'note':noteOFgroup})
     # return HttpResponse('This is update note page')
@@ -118,30 +99,18 @@ def updateNOTE(req, group, note):
 
 def deleteGroup(req, group):
     groupRefference = Group.objects.get(pk = group)
-
     groupRefference.delete()
+
     messages.success(req, 'Your Group has been deleted.')
     return redirect('/')
-    # return HttpResponse("It is group delete page.")
 
 
 
 
 def deleteNOTE(req, group, note):
-
     groupOFnote = Group.objects.get(pk = group)
     noteOFgroup = Note.objects.filter(group__id = group, pk = note)
     noteOFgroup[0].delete()
-
-
     messages.success(req, 'Delete SuccessFully')
-
     
     return redirect(f'/group-{groupOFnote.id}/')
-
-
-
-
-
-
-    return HttpResponse("It is group delete page.")

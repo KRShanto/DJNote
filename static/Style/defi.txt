@@ -1,9 +1,0 @@
-*In home.css I made styling for home page. But didnot styled "Group" sections. 
-
-*In the group.css I made stylign for "Group" section which is on the home page.
-
-*In the main.css I made styling for "main.html"
-
-*In notesOnly.css I made styling for "show_note" section. This section is using multiple html files and pages.
-
-*
