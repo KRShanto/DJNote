@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'Style/homeGroup.css' %}">
 
     {% comment %} JS link {% endcomment %}
-    <script src="{% static 'JS/home.js' %}"></script>
+    <script type="module" defer src="{% static 'JS/home.js' %}"></script>
 
 {% endblock link %}
 
@@ -56,6 +56,7 @@
                     <div class="links">
                         <a href="{% url 'group' i.id %}"           class='view_note'>Viewe Group</a>
                         <a href="{% url 'deleteGroup' i.id %}" class='delete'>Delete Group</a>
+                        {% comment %} <a href="{{forloop.counter}}" class='delete'>Delete Group</a> {% endcomment %}
                         <a href="{% url 'group' i.id %}" class='edit'>Edit Group</a>
                     </div>
 

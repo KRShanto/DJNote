@@ -127,3 +127,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# This is for using es6 modules.
+# if DEBUG:
+#     import mimetypes
+#     mimetypes.add_type("application/javascript", ".js", True)

@@ -1,7 +1,9 @@
+/* font-family: 'STIX Two Text', serif; */
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital@1&display=swap'); 
+
 :root{
     --root-color:rgb(224, 16, 9);
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -203,7 +205,61 @@ nav.responsive li{
 
 
 
+/* ************** This is for Alert box ***************** */
+.alertbox{
 
+    position: fixed;
+    top: 1rem;
+    width: 80%;
+    left: 50%;
+    background-color: rgb(192, 191, 191);
+    z-index: 1000;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-family: sans-serif;
+    border: 0.3rem solid black;
+    transform: translatex(-50%) scale(0);
+    
+}
+.alertbox .alertMessage {
+    font-size: 4rem;
+    color: black;
+    word-spacing: 0.7rem;
+    text-align: center;
+    
+}
+.alertbox .alertMessage .author{
+    color: red;
+    font-family: 'STIX Two Text', serif;
+    font-size: 5.5rem;
+    text-shadow: 0.06rem 0.1rem 0.05rem black;
+}
+.alertbox .alertOptions{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.alertbox .alertOptions a, .alertbox .alertOptions button{
+    --root-alert-button-color:rgb(7, 7, 202);
+    text-decoration: none;
+    border-radius: 1rem;
+    width: 14rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 2rem 1rem;
+    font-weight: bold;
+    color: white;
+    border: 0.2rem solid black;
+    text-shadow: 0.1rem 0.1rem 0.1rem black;
+    box-shadow: 0.2rem 0 0.5rem black;
+    background-color: var(--root-alert-button-color);
+}
+.alertbox .alertOptions a{
+    --root-alert-button-color:rgb(207, 0, 69);
+}
 
 
 
@@ -265,4 +321,14 @@ nav.responsive li{
     html{
         font-size: 20%;
     }
+} 
+
+
+
+
+/* ************** Little Stylings ************** */
+/* this class will decrease opacity */
+.opacity-wale{
+    transition: 0.5s;
+    opacity: 0.7;
 }

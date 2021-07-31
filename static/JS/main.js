@@ -1,4 +1,8 @@
+import ResponsiveNess from "./module.js";
+    import { AlertMessage } from "./module.js";
 $(document).ready(()=>{
+
+    
 
     // Common variables
     const nav = document.querySelector('nav')
@@ -35,8 +39,8 @@ $(document).ready(()=>{
             makeCrossBar(false)
         }
     })
-        
 
+        // This function is for making the hamburger to a cross sign.
         function makeCrossBar(boolean){
             // if the parameter boolean is true: make the menu to 'cross'
             // if the parameter is false : make the menu to 'bar'
@@ -60,26 +64,19 @@ $(document).ready(()=>{
                     hamSpan.style.position = 'relative';
                     hamSpan.style.display = 'inline'
                 }
-                console.log('It worked')
             }
         }
 
-        function mediaFunction(x) {
-            if (x.matches) { 
-                nav.classList.add('responsive')
-                console.log('Media come')
-            }
-            else{
-                nav.classList.remove('responsive')
-                console.log('Media gone')
-            }
-        }
+        
                 
-            // when the media match, the function will add a class 'responsive' to the nav bar.
-        const x = window.matchMedia("(max-width: 1000px)")
-        mediaFunction(x) // Call listener function at run time
-          x.addListener(mediaFunction) 
+        // when the media match, the function will add a class 'responsive' to the nav bar.
+        const navResponseSiveVariable = window.matchMedia("(max-width: 1000px)")
+        const navResponseSiveInstance = new ResponsiveNess()
+
+        navResponseSiveInstance.navBarResponsiveNess(navResponseSiveVariable) 
+        // Call listener function at run time //
+        navResponseSiveVariable.addListener(navResponseSiveInstance.navBarResponsiveNess) 
+        console.log(178 - 84)
 
 
 })
-

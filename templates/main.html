@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- JavaScript -->
-        <script  src="{% static 'JS/main.js' %}"></script>
+    <script src="{% static 'JS/module.js' %}"></script>
+    
+    <script type="module" defer src="{% static 'JS/main.js' %}"></script>
+
+    
 
     {% block link %}
     {% endblock link %}
@@ -55,7 +59,28 @@
         </section>
     {% endfor %}
 
+
+    <!--  This is for making an AlertBox   -->
+    <!-- This is handle with JavaScript-->
+    <section class='alertbox'>
+
+        <h2 class="alertMessage">
+            <span class='author'><!--who is giving alert--></span>
+            <br>
+            <span class='message'><!-- alert message --></span>
+        </h2>
+
+        <div class="alertOptions">
+            <a href="">Confirm</a>
+            <button>Cancel</button>
+        </div>
+        
+    </section>
+
         {% block body %}{% endblock body %}
+
+
+    
 
     <footer>
         <!-- I will make it later. -->
