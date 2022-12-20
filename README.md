@@ -23,3 +23,4 @@ Run the server:
 ```bash
 python manage.py runserver
 ```
+[DJNote.webm](https://user-images.githubusercontent.com/84588948/208628190-ddb967c7-8010-45df-8486-3297ac0ff94e.webm)
